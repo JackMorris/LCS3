@@ -5,7 +5,7 @@ namespace Ex4_3
     class Program
     {
         // Declare passenger enum
-        enum Passengers
+        enum Passenger
         {
             Abby = 135,
             Bob = 175,
@@ -15,21 +15,21 @@ namespace Ex4_3
 
         static void Main()
         {
+            PrintWeightCheck(Passenger.Abby, Passenger.Bob);
+            PrintWeightCheck(Passenger.Bob, Passenger.Charlie);
+            PrintWeightCheck(Passenger.Charlie, Passenger.Dawn);
+        }
+
+        static void PrintWeightCheck(Passenger p1, Passenger p2)
+        {
             // Ride constants.
             const int MaxWeight = 300;
             const int MinWeight = 100;
 
-            // Abby and Bob
-            int weightSum = (int)Passengers.Abby + (int)Passengers.Bob;
-            Console.WriteLine("Abby and Bob can ride? {0}", (weightSum > MinWeight) && (weightSum <= MaxWeight));
+            int weightSum = (int)p1 + (int)p2;
+            bool canRide = (weightSum > MinWeight) && (weightSum < MaxWeight);
 
-            // Bob and Charlie
-            weightSum = (int)Passengers.Bob + (int)Passengers.Charlie;
-            Console.WriteLine("Bob and Charlie can ride? {0}", (weightSum > MinWeight) && (weightSum <= MaxWeight));
-
-            // Charlie and Dawn
-            weightSum = (int)Passengers.Charlie + (int)Passengers.Dawn;
-            Console.WriteLine("Charlie and Dawn can ride? {0}", (weightSum > MinWeight) && (weightSum <= MaxWeight));
+            Console.WriteLine("{0} and {1} can ride? {2}", p1, p2, canRide);
         }
     }
 }
