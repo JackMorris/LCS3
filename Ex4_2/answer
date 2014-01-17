@@ -1,0 +1,5 @@
+Output: "A: 5, B: 6, C: 6"
+
+A = 5 from initial assignment.
+B = 6 as varA is prefix incremented before being assigned to B.
+C = 6 as varB is postfix incremented, so 6 is incremented to 7 after assignment.
