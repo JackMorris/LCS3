@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Ex3_4
 {
@@ -9,19 +6,19 @@ namespace Ex3_4
     {
         // Delcare the months enumeration.
         enum Months
-            {
-                January = 1,
-                February,
-                March,
-                April,
-                May,
-                June,
-                July,
-                August,
-                September,
-                October,
-                November,
-                December,
+        {
+            January = 1,
+            February,
+            March,
+            April,
+            May,
+            June,
+            July,
+            August,
+            September,
+            October,
+            November,
+            December,
         }
 
         static void Main(string[] args)
