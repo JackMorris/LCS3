@@ -17,5 +17,8 @@ namespace Ex6_2
         {
             // Provide some mechanism to 'shelve' the book.
         }
+
+        // To please Visual Studio
+        public static void Main() { }
     }
 }
