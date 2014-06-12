@@ -7,18 +7,18 @@ namespace Ex7_3
         private string title;
         private string author;
         private string publisher = "O'Reilly";
-        private string ISBN;
+        private string isbn;
 
-        public Book(string title, string author, string ISBN)
+        public Book(string title, string author, string isbn)
         {
             this.title = title;
             this.author = author;
-            this.ISBN = ISBN;
+            this.isbn = isbn;
         }
 
         public void DisplayBook()
         {
-            Console.WriteLine("{0}\t{1}\t{2}\t{3}", this.title, this.author, this.publisher, this.ISBN);
+            Console.WriteLine("{0}\t{1}\t{2}\t{3}", title, author, publisher, isbn);
         }
     }
 }
