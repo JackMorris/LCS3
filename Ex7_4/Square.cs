@@ -4,55 +4,72 @@ namespace Ex7_4
 {
     public class Square
     {
-        // Points of square. P1 = bottom left, subsequent points labelled clockwise.
-        private Point p1;
-        private Point p2;
-        private Point p3;
-        private Point p4;
+        private Point topLeft;
+        private Point topRight;
+        private Point bottomLeft;
+        private Point bottomRight;
 
         public Square(Point bottomLeft, int sideLength)
         {
-            p1 = new Point(bottomLeft.x, bottomLeft.y);
-            p2 = new Point(bottomLeft.x, bottomLeft.y + sideLength);
-            p3 = new Point(bottomLeft.x + sideLength, bottomLeft.y + sideLength);
-            p4 = new Point(bottomLeft.x + sideLength, bottomLeft.y);
+            this.topLeft = new Point(bottomLeft.x, bottomLeft.y + sideLength);
+            this.topRight = new Point(bottomLeft.x + sideLength, bottomLeft.y + sideLength);
+            this.bottomLeft = new Point(bottomLeft.x, bottomLeft.y);
+            this.bottomRight = new Point(bottomLeft.x + sideLength, bottomLeft.y);
+        }
+
+        public void PrintDescription()
+        {
+            Console.WriteLine("Top left:\t{0}", topLeft.CoordinateString());
+            Console.WriteLine("Top right:\t{0}", topRight.CoordinateString());
+            Console.WriteLine("Bottom left:\t{0}", bottomLeft.CoordinateString());
+            Console.WriteLine("Bottom right:\t{0}", bottomRight.CoordinateString());
         }
 
         public void Draw()
         {
-            // Output point coordinates
-            Console.WriteLine("p1: {0}, p2: {1}, p3: {2}, p4: {3}\n",
-                p1.CoordinateString(), p2.CoordinateString(), p3.CoordinateString(), p4.CoordinateString());
+            var squareBoundary = new {  xLeft = (int)bottomLeft.x, 
+                                        xRight = (int)bottomRight.x, 
+                                        yTop = (int)topLeft.y, 
+                                        yBottom = (int)bottomLeft.y };
 
-            // (Felt like actually drawing the square)
-            var xl = p1.x;
-            var xr = p3.x;
-            var yt = p3.y;
-            var yb = p1.y;
-
-            for (int y = yt + 1; y >= 0; y--)
+            var drawBoundary = new {    xLeft = 0, 
+                                        xRight = squareBoundary.xRight + 1, // Provide a margin
+                                        yTop = squareBoundary.yTop + 1,     // by adding 1.
+                                        yBottom = 0 };
+            
+            for (int y = drawBoundary.yTop; y >= drawBoundary.yBottom; y--)
             {
-                for (int x = 0; x <= xr + 1; x++)
+                for (int x = drawBoundary.xLeft; x <= drawBoundary.xRight; x++)
                 {
-                    if (((x == xl || x == xr) && y >= yb && y <= yt)        // Point on vertical edge
-                        || ((y == yt || y == yb) && x >= xl && x <= xr))    // Point on horizontal edge
+                    var onVerticalEdge = (x == squareBoundary.xLeft || x == squareBoundary.xRight) && y >= squareBoundary.yBottom && y <= squareBoundary.yTop;
+                    var onHorizontalEdge = (y == squareBoundary.yBottom || y == squareBoundary.yTop) && x >= squareBoundary.xLeft && x <= squareBoundary.xRight;
+                    var onYAxis = (x == drawBoundary.xLeft);
+                    var onXAxis = (y == drawBoundary.yBottom);
+                    var onOrigin = onXAxis && onYAxis;
+                    
+                    if (onVerticalEdge || onHorizontalEdge)
+                    {
+                        Console.Write("#");
+                    }
+                    else if (onOrigin)
                     {
                         Console.Write("+");
                     }
-                    else if (x == 0 && y != 0)  // On Y-axis (exclude origin)
+                    else if (onYAxis)
                     {
                         Console.Write("|");
                     }
-                    else if (x != 0 && y == 0)  // On X-axis (exclude origin)
+                    else if (onXAxis)
                     {
                         Console.Write("-");
                     }
                     else
                     {
-                        Console.Write(" ");     // Empty Space
+                        // Empty space.
+                        Console.Write(" ");
                     }
                 }
-                Console.Write("\n");
+                Console.Write(Environment.NewLine);
             }
         }
     }

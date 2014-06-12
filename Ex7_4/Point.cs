@@ -13,9 +13,9 @@ namespace Ex7_4
             this.y = y;
         }
 
-        public String CoordinateString()
+        public string CoordinateString()
         {
-            return String.Format("({0},{1})", this.x, this.y);
+            return String.Format("({0}, {1})", x, y);
         }
     }
 }

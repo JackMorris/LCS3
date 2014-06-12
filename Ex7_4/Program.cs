@@ -6,9 +6,10 @@ namespace Ex7_4
     {
         static void Main(string[] args)
         {
-            var bottomLeft = new Point(0, 2);
-            var mySquare = new Square(bottomLeft, 4);
-            mySquare.Draw();
+            var bottomLeftPoint = new Point(0, 3);
+            var square = new Square(bottomLeftPoint, 4);
+            square.PrintDescription();
+            square.Draw();
         }
     }
 }
