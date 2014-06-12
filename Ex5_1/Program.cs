@@ -4,28 +4,30 @@ namespace Ex5_1
 {
     class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
+            const int MaxCounterValue = 10;
+            var counter = 1;
+
             // while()
-            var i = 1;
-            while (i <= 10)
+            while (counter <= MaxCounterValue)
             {
-                Console.WriteLine("{0}", i);
-                i++;
+                Console.WriteLine("{0}", counter);
+                counter++;
             }
 
             // do..while()
-            i = 1;
+            counter = 1;
             do
             {
-                Console.WriteLine("{0}", i);
-                i++;
-            } while (i <= 10);
+                Console.WriteLine("{0}", counter);
+                counter++;
+            } while (counter <= MaxCounterValue);
 
             // for
-            for (i = 1; i <= 10; i++)
+            for (counter = 1; counter <= MaxCounterValue; counter++)
             {
-                Console.WriteLine("{0}", i);
+                Console.WriteLine("{0}", counter);
             }
         }
     }
