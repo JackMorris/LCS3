@@ -4,7 +4,7 @@ namespace Ex5_4
 {
     class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
             var i = 0;
             var j = 25;
