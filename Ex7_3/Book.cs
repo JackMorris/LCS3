@@ -4,12 +4,12 @@ namespace Ex7_3
 {
     public class Book
     {
-        private String title;
-        private String author;
-        private String publisher = "O'Reilly";
-        private String ISBN;
+        private string title;
+        private string author;
+        private string publisher = "O'Reilly";
+        private string ISBN;
 
-        public Book(String title, String author, String ISBN)
+        public Book(string title, string author, string ISBN)
         {
             this.title = title;
             this.author = author;
