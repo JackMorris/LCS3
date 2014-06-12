@@ -36,13 +36,21 @@ namespace Ex7_4
                 {
                     if (((x == xl || x == xr) && y >= yb && y <= yt)        // Point on vertical edge
                         || ((y == yt || y == yb) && x >= xl && x <= xr))    // Point on horizontal edge
+                    {
                         Console.Write("+");
+                    }
                     else if (x == 0 && y != 0)  // On Y-axis (exclude origin)
+                    {
                         Console.Write("|");
+                    }
                     else if (x != 0 && y == 0)  // On X-axis (exclude origin)
+                    {
                         Console.Write("-");
+                    }
                     else
+                    {
                         Console.Write(" ");     // Empty Space
+                    }
                 }
                 Console.Write("\n");
             }

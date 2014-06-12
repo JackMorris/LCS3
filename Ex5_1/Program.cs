@@ -24,7 +24,9 @@ namespace Ex5_1
 
             // for
             for (i = 1; i <= 10; i++)
+            {
                 Console.WriteLine("{0}", i);
+            }
         }
     }
 }
