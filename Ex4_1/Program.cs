@@ -4,13 +4,16 @@ namespace Ex4_1
 {
     class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
             var x = 25;
             var y = 5;
-
-            Console.WriteLine("Sum:\t\t{0}\nDifference\t{1}\nProduct\t\t{2}\nQuotient\t{3}\nModulus\t\t{4}", 
-                x + y, x - y, x * y, x / y, x % y);
+            
+            Console.WriteLine("Sum:\t\t{0}", x + y);
+            Console.WriteLine("Difference:\t{0}", x - y);
+            Console.WriteLine("Product:\t{0}", x * y);
+            Console.WriteLine("Quotient:\t{0}", x / y);
+            Console.WriteLine("Modulus:\t{0}", x % y);
         }
     }
 }
