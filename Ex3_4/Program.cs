@@ -4,7 +4,6 @@ namespace Ex3_4
 {
     class Program
     {
-        // Delcare the months enumeration.
         enum Months
         {
             January = 1,
