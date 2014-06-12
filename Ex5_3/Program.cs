@@ -17,11 +17,11 @@ namespace Ex5_3
         static void Main()
         {
             Console.Write("Enter value: ");
-            int input = Convert.ToInt32(Console.ReadLine());
+            var input = Convert.ToInt32(Console.ReadLine());
 
-            bool isEven = (input % 2 == 0);
-            bool multipleOfTen = (input % 10 == 0);
-            ValueRange range = (input == 0) ? ValueRange.Zero : ((input <= 100) ? ValueRange.LessThanHundred : ValueRange.GreaterThanHundred);
+            var isEven = (input % 2 == 0);
+            var multipleOfTen = (input % 10 == 0);
+            var range = (input == 0) ? ValueRange.Zero : ((input <= 100) ? ValueRange.LessThanHundred : ValueRange.GreaterThanHundred);
 
             switch (range)
             {

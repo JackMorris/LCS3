@@ -26,8 +26,8 @@ namespace Ex4_3
             const int MaxWeight = 300;
             const int MinWeight = 100;
 
-            int weightSum = (int)p1 + (int)p2;
-            bool canRide = (weightSum > MinWeight) && (weightSum < MaxWeight);
+            var weightSum = (int)p1 + (int)p2;
+            var canRide = (weightSum > MinWeight) && (weightSum < MaxWeight);
 
             Console.WriteLine("{0} and {1} can ride? {2}", p1, p2, canRide);
         }

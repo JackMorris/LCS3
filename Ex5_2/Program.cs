@@ -8,7 +8,7 @@ namespace Ex5_2
         {
             // Get integer input.
             Console.Write("Enter value: ");
-            int input = Convert.ToInt32(Console.ReadLine());
+            var input = Convert.ToInt32(Console.ReadLine());
 
             // Three cases: ==0, 0<input<=100 (test for even, odd, multiple of ten also), >100 (too large).
             if (input == 0)

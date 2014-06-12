@@ -25,10 +25,10 @@ namespace Ex7_4
                 p1.CoordinateString(), p2.CoordinateString(), p3.CoordinateString(), p4.CoordinateString());
 
             // (Felt like actually drawing the square)
-            int xl = p1.x;
-            int xr = p3.x;
-            int yt = p3.y;
-            int yb = p1.y;
+            var xl = p1.x;
+            var xr = p3.x;
+            var yt = p3.y;
+            var yb = p1.y;
 
             for (int y = yt + 1; y >= 0; y--)
             {
