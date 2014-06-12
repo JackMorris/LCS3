@@ -1,51 +1,60 @@
-﻿// I decided to take this question literally, and I didn't want to write 100 case statements, so I
-// was a bit creative...
-
-using System;
+﻿using System;
 
 namespace Ex5_3
 {
     class Program
     {
-        enum ValueRange
+        enum InputType
         {
             Zero,
-            LessThanHundred,
-            GreaterThanHundred,
+            Odd,
+            Even,
+            MultipleOf10,
+            TooLarge,
         }
 
-        static void Main()
+        static void Main(string[] args)
         {
+            // Get integer input.
             Console.Write("Enter value: ");
-            var input = Convert.ToInt32(Console.ReadLine());
+            var inputInt = Convert.ToInt32(Console.ReadLine());
 
-            var isEven = (input % 2 == 0);
-            var multipleOfTen = (input % 10 == 0);
-            var range = (input == 0) ? ValueRange.Zero : ((input <= 100) ? ValueRange.LessThanHundred : ValueRange.GreaterThanHundred);
-
-            switch (range)
+            var inputType = InputType.TooLarge;
+            if (inputInt < 100)
             {
-                case ValueRange.Zero:
+                if (inputInt == 0)
+                {
+                    inputType = InputType.Zero;
+                }
+                else if (inputInt % 10 == 0)
+                {
+                    inputType = InputType.MultipleOf10;
+                }
+                else if (inputInt % 2 == 0)
+                {
+                    inputType = InputType.Even;
+                }
+                else
+                {
+                    inputType = InputType.Odd;
+                }
+            }
+
+            switch (inputType)
+            {
+                case InputType.Zero:
                     Console.WriteLine("Input is 0");
                     break;
-                case ValueRange.LessThanHundred:
-                    switch (isEven)
-                    {
-                        case true:
-                            Console.WriteLine("Input is even");
-                            break;
-                        case false:
-                            Console.WriteLine("Input is odd");
-                            break;
-                    }
-                    switch (multipleOfTen)
-                    {
-                        case true:
-                            Console.WriteLine("Input is multiple of 10");
-                            break;
-                    }
+                case InputType.Odd:
+                    Console.WriteLine("Input is odd");
                     break;
-                case ValueRange.GreaterThanHundred:
+                case InputType.Even:
+                    Console.WriteLine("Input is even");
+                    break;
+                case InputType.MultipleOf10:
+                    Console.WriteLine("Input is multiple of 10");
+                    break;
+                case InputType.TooLarge:
                     Console.WriteLine("Input too large (> 100)");
                     break;
             }
