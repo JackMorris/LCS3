@@ -4,7 +4,7 @@ namespace Ex4_4
 {
     class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
             const float Pi = 3.14159f;
             const int Radius = 5;
@@ -17,9 +17,8 @@ namespace Ex4_4
             var volume = (4f / 3f) * Pi * Radius * Radius * Radius;
             Console.WriteLine("Volume: {0}", volume);
 
-            // Output maximum measurement.
-            var maxMeasurmentName = (surfaceArea > volume) ? "Surface area" : "Volume";
-            Console.WriteLine("{0} is the largest measurement", maxMeasurmentName);
+            var maxMeasurementName = (surfaceArea > volume) ? "Surface area" : "Volume";
+            Console.WriteLine("{0} is the largest measurement", maxMeasurementName);
         }
     }
 }
