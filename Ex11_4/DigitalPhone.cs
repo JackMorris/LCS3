@@ -14,7 +14,7 @@ namespace Ex11_4
             Console.WriteLine("Ringing the {0}", phonetype);
         }
 
-        public virtual void VoiceMail()
+        public virtual void VoiceMail() 
         {
             Console.WriteLine("You have a message. Press Play to retrieve.");
         }
